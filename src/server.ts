@@ -14,6 +14,11 @@ import * as dotenv from "dotenv";
 dotenv.config({ path: ".env.example" });
 
 /**
+ * Controllers (route handlers).
+ */
+import * as homeController from "./controllers/home";
+
+/**
  * Create Express server.
  */
 const app = express();
@@ -27,9 +32,10 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-    res.end("Server is running");
-});
+/**
+ * Primary app routes.
+ */
+app.get("/", homeController.index);
 
 /**
  * Error Handler. Provides full stack - remove for production
