@@ -27,3 +27,4 @@ To call a script, simply run `npm run <script-name>` from the command line.
 | ------------------------ | --------------------------------------------------------------------------------------------- |
 | `start`                  | Runs the project with `--inspect`. Can be invoked with `npm start`                            |
 | `build`                  | Build                                                                                         |
+| `test`                   | Runs tests using Jest test runner                                                            |
