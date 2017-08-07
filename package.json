@@ -1,11 +1,13 @@
 {
   "name": "typescript-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "A minimal Node.js project using TypeScript",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --watch \"src/**/*.ts\" --ignore \"src/**/*.spec.ts\" --exec \"ts-node\" --inspect src/server.ts",
-    "build": "tsc",
+    "build": "npm run build-ts && npm run tslint",
+    "build-ts": "tsc",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
     "test": "jest --forceExit"
   },
   "repository": {
@@ -58,6 +60,7 @@
     "supertest": "^3.0.0",
     "ts-jest": "^20.0.9",
     "ts-node": "^3.3.0",
+    "tslint": "^5.5.0",
     "typescript": "^2.4.2"
   }
 }
