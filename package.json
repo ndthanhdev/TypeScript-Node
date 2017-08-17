@@ -4,8 +4,9 @@
   "description": "A minimal Node.js project using TypeScript",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch \"src/**/*.ts\" --ignore \"src/**/*.spec.ts\" --exec \"ts-node\" --inspect src/server.ts",
-    "build": "npm run build-ts && npm run tslint",
+    "start": "npm run tslint && npm run serve",
+    "serve": "nodemon --watch \"src/**/*.ts\" --ignore \"src/**/*.spec.ts\" --exec \"ts-node\" --inspect src/server.ts",
+    "build": "npm run tslint && npm run build-ts",
     "build-ts": "tsc",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "test": "jest --forceExit"
